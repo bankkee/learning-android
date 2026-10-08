@@ -1,10 +1,10 @@
 {
   "Form": [
     {
-      "FormHead": { "FormID": "COFFEE0101" },
+      "Header": { "ApiCode": "COFFEE0101" },
       "FormData": {
-        "RetMsgCode": "COFFEE0099",
-        "RetMessage": "ระบบแนะนำเมนูไม่พร้อมใช้งานชั่วคราว กรุณาลองใหม่อีกครั้ง"
+        "ErrorCode": "COFFEE0099",
+        "ErrorMessage": "ระบบแนะนำเมนูไม่พร้อมใช้งานชั่วคราว กรุณาลองใหม่อีกครั้ง"
       }
     }
   ]

@@ -6,7 +6,7 @@ sealed class Failure(message: String? = "", ex: Exception = Exception()) : Excep
 
     class ServiceUnavailable : Failure("Service is not available")
 
-    /** server ตอบกลับมาได้ แต่แจ้งว่าทำรายการไม่สำเร็จ [formData] คือสิ่งที่ server ส่งมา (มี retMsgCode และ retMessage) */
+    /** server ตอบกลับมาได้ แต่แจ้งว่าทำรายการไม่สำเร็จ [formData] คือสิ่งที่ server ส่งมา (มี errorCode และ errorMessage) */
     class ServerError(
         message: String? = "Server Error",
         ex: Exception = Exception()

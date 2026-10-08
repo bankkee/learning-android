@@ -21,6 +21,6 @@ interface GetRecommendedDessertApi {
     fun getRecommendedDessert(@Body reqParam: BaseRequest<FormData>): Call<BaseResponse<GetRecommendedDessertResponse>>
 
     companion object {
-        const val FORM_HEAD_REQ = "DESSERT0101"
+        const val API_CODE = "DESSERT0101"
     }
 }

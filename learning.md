@@ -1,4 +1,4 @@
-# บทสอน Android ตาม pattern ของทีม — สำหรับ Claude ผู้ดำเนินการสอน
+# บทสอน Android แบบโปรเจกต์หลาย module — สำหรับ Claude ผู้ดำเนินการสอน
 
 ไฟล์นี้เขียนถึง Claude (หรือ agent ตัวอื่น) ที่เปิดโปรเจกต์นี้ **คุณคือผู้สอน** ผู้ใช้ที่คุยกับคุณคือผู้เรียน
 คุณสอนตัวต่อตัวในแชต: ให้โจทย์ รอผู้เรียนลงมือ ตรวจงานจากไฟล์จริง แล้วเฉลยและอธิบาย
@@ -15,7 +15,7 @@
 | ผู้เรียน | เขียนโปรแกรมภาษาอื่นเป็น แต่ไม่เคยเขียน Android |
 | จังหวะ | 6 session ไม่จับเวลา ผู้เรียนกำหนดจังหวะเอง ควรเว้นอย่างน้อย 1 วันระหว่าง session |
 | สิ่งที่ทำ | แอปร้านกาแฟ สร้างต่อยอดกันทุก session บนโปรเจกต์เดียว |
-| ผลลัพธ์ | ผู้เรียนรับงานเล็ก ๆ ในโปรเจกต์จริงของทีมได้: รู้ว่าต้องแตะไฟล์ไหน เพิ่ม API หนึ่งเส้นจนถึงหน้าจอได้ และเปิดหน้าจอข้าม module ได้ |
+| ผลลัพธ์ | ผู้เรียนรับงานเล็ก ๆ ในโปรเจกต์ Android หลาย module ได้: รู้ว่าต้องแตะไฟล์ไหน เพิ่ม API หนึ่งเส้นจนถึงหน้าจอได้ และเปิดหน้าจอข้าม module ได้ |
 
 | Session | หัวข้อ | สิ่งที่แอปทำได้เมื่อจบ |
 |---|---|---|
@@ -60,9 +60,9 @@
 | "เสร็จแล้ว" | ตรวจงาน (ดูหัวข้อถัดไป) |
 | "ติด", "ใบ้หน่อย" หรือส่ง error มา | ใบ้เป็นขั้น (ดูหัวข้อถัดไป) |
 | "เฉลยเลย" | เฉลยและอธิบาย |
-| ถามเรื่องอื่น | ถ้าเกี่ยวกับภารกิจ ตอบ ถ้านอกเรื่อง (Compose, Hilt, Flow ซึ่งโปรเจกต์จริงไม่ได้ใช้) ตอบหนึ่งประโยค จดลง `progress.md` แล้วพากลับ |
+| ถามเรื่องอื่น | ถ้าเกี่ยวกับภารกิจ ตอบ ถ้านอกเรื่อง (Compose, Hilt, Flow ซึ่งหลักสูตรนี้ไม่ได้ใช้) ตอบหนึ่งประโยค จดลง `progress.md` แล้วพากลับ |
 
-4. **อธิบายหลังเฉลย** — ทำทุกครั้ง ไม่ว่าผู้เรียนจะทำถูกเองหรือดูเฉลย หัวข้อ "อธิบายหลังเฉลย" คือเนื้อหาจริงของบทเรียน: สิ่งที่เพิ่งเขียนคืออะไร และทำไมทีมทำแบบนี้
+4. **อธิบายหลังเฉลย** — ทำทุกครั้ง ไม่ว่าผู้เรียนจะทำถูกเองหรือดูเฉลย หัวข้อ "อธิบายหลังเฉลย" คือเนื้อหาจริงของบทเรียน: สิ่งที่เพิ่งเขียนคืออะไร และทำไมโปรเจกต์นี้ทำแบบนี้
 5. **บันทึก** ลง `progress.md` แล้วถามว่าไปภารกิจถัดไปเลยไหม
 
 **ไม่มีการจับเวลา** ผู้เรียนกำหนดจังหวะเอง ไม่ต้องบอกว่าภารกิจควรใช้เวลาเท่าไร และไม่เร่ง คุณเฉลยในสองกรณีเท่านั้น: ผู้เรียนขอ หรือให้คำใบ้ครบสามขั้นแล้วผู้เรียนยังไปต่อไม่ได้ ซึ่งกรณีหลังให้ถามก่อนว่าอยากดูเฉลยหรืออยากลองต่อ
@@ -72,7 +72,7 @@
 อย่าเชื่อคำว่า "เสร็จแล้ว" โดยไม่ดู คุณอ่านไฟล์ของผู้เรียนได้ ให้ใช้ความสามารถนั้น
 
 - **อ่านไฟล์ที่ภารกิจนั้นแตะ** แล้วเทียบกับ "เฉลย" ในบทสอนและไฟล์ใน `solutions/session-N/`
-- **โค้ดที่ต่างจากเฉลยแต่ถูกต้องถือว่าผ่าน** บอกผู้เรียนว่าถูก แล้วชี้ว่าต่างจากแบบของทีมตรงไหนและเพราะอะไรทีมถึงเขียนอีกแบบ ถ้าความต่างจะทำให้ภารกิจถัดไปทำตามบทสอนไม่ได้ (เช่น ตั้งชื่อ id หรือชื่อ function ไม่ตรง) ให้ขอให้ผู้เรียนแก้ชื่อให้ตรง
+- **โค้ดที่ต่างจากเฉลยแต่ถูกต้องถือว่าผ่าน** บอกผู้เรียนว่าถูก แล้วชี้ว่าต่างจากแบบของโปรเจกต์นี้ตรงไหนและเพราะอะไรโปรเจกต์นี้ถึงเขียนอีกแบบ ถ้าความต่างจะทำให้ภารกิจถัดไปทำตามบทสอนไม่ได้ (เช่น ตั้งชื่อ id หรือชื่อ function ไม่ตรง) ให้ขอให้ผู้เรียนแก้ชื่อให้ตรง
 - **ถ้าสงสัยว่า compile ไม่ผ่าน** รัน `./gradlew assembleSitDebug` แล้วอ่าน error ให้
 - **สิ่งที่คุณมองไม่เห็น** คือหน้าจอ emulator ให้ถามผู้เรียนตามหัวข้อ "เช็กว่าผ่าน" ว่าเห็นอะไร ส่วน Logcat ให้ผู้เรียนวางข้อความมา หรือถ้ามีอุปกรณ์ต่ออยู่คุณอ่านเองได้ด้วย `adb logcat -d -s Lifecycle`
 - **ถ้าผิด** บอกว่าผิดตรงไหนแบบเจาะจงหนึ่งจุด แล้วให้ผู้เรียนแก้เอง ไม่แก้ให้
@@ -203,7 +203,7 @@ learning-android/
 | `networks` | ชนิดข้อมูลพื้นฐานของการเรียกข้อมูล | มาตรฐานปลั๊กไฟ | อ่านอย่างเดียว |
 | `buildSrc` | รายการเวอร์ชันของ library ทั้งหมด | สมุดจดรุ่นอุปกรณ์ | ไม่ต้องแตะ |
 
-บอกผู้เรียนว่า: โปรเจกต์จริงของทีมมี module แบบ `coffee` หลายสิบตัว ตัวละหนึ่ง feature ส่วน `app`, `core`, `apilayer`, `networks` มีอย่างละตัวเหมือนที่เห็น
+บอกผู้เรียนว่า: โปรเจกต์ขนาดใหญ่มี module แบบ `coffee` ได้หลายสิบตัว ตัวละหนึ่ง feature ส่วน `app`, `core`, `apilayer`, `networks` มีอย่างละตัวเหมือนที่เห็น
 
 **ถาม:** ถ้าจะแก้หน้าตาของหน้าร้านกาแฟ น่าจะต้องเข้า module ไหน (คำตอบ: `coffee`)
 
@@ -292,7 +292,7 @@ coffee/
 | คำว่า "ร้านกาแฟ" บนหน้าจอ เขียนไว้ที่ไฟล์ไหน | `coffee/src/main/res/values/strings.xml` ชื่อ `coffee_title` |
 | เวอร์ชันของ library ทั้งหมดอยู่ที่ไหน | `buildSrc/src/main/java/Dependencies.kt` |
 
-**อธิบายหลังเฉลย:** ข้อความไม่ได้พิมพ์ตรง ๆ ใน layout แต่อ้างถึงด้วยชื่อ (`@string/coffee_title`) เพื่อให้แปลภาษาและแก้คำได้ที่เดียว ในโปรเจกต์จริงชื่อจะเป็นรหัสย่อตามด้วยตัวเลข ไม่ใช่คำที่อ่านแล้วรู้ความหมาย
+**อธิบายหลังเฉลย:** ข้อความไม่ได้พิมพ์ตรง ๆ ใน layout แต่อ้างถึงด้วยชื่อ (`@string/coffee_title`) เพื่อให้แปลภาษาและแก้คำได้ที่เดียว
 
 ## ภารกิจ 1 — เพิ่ม View ใน layout
 
@@ -326,7 +326,7 @@ coffee/
 
 **อธิบายหลังเฉลย**
 
-- **`android:id="@+id/..."`** — ตั้งชื่อให้ View เพื่อให้โค้ด Kotlin เรียกถึงได้ ทีมใช้คำนำหน้าบอกชนิด: `tv` = TextView, `btn` = Button
+- **`android:id="@+id/..."`** — ตั้งชื่อให้ View เพื่อให้โค้ด Kotlin เรียกถึงได้ โปรเจกต์นี้ใช้คำนำหน้าบอกชนิด: `tv` = TextView, `btn` = Button
 - **`app:layout_constraint...`** — บอกตำแหน่งโดยผูกขอบของ View กับสิ่งอื่น `Top_toBottomOf="@id/tvGreeting"` แปลว่า "ขอบบนของฉันอยู่ติดขอบล่างของ `tvGreeting`"
 - **`0dp`** ในความกว้าง — แปลว่า "ยืดตาม constraint" เมื่อผูกทั้งซ้าย (`Start`) และขวา (`End`) กับ parent จึงกว้างเต็มจอ
 - **`wrap_content`** — สูงเท่าที่เนื้อหาต้องการ
@@ -367,7 +367,7 @@ override fun setUpViews() {
 
 - **ViewBinding** — ไฟล์ `activity_coffee_menu.xml` ถูกสร้างเป็น class `ActivityCoffeeMenuBinding` ให้อัตโนมัติ และทุก View ที่มี id กลายเป็น property ถ้าพิมพ์ id ผิด โค้ดจะ compile ไม่ผ่าน ซึ่งดีกว่าไปพังตอนรัน
 - **`getViewBinding()`** — บรรทัดบนสุดของ class คือจุดที่บอกว่าหน้าจอนี้ใช้ layout ไหน
-- **`setUpViews()`** — ทีมไม่ override `onCreate` ในแต่ละหน้าจอ base class เรียก `setUpViews()` ให้ ทุกหน้าจอจึงมีรูปร่างเหมือนกัน
+- **`setUpViews()`** — โปรเจกต์นี้ไม่ override `onCreate` ในแต่ละหน้าจอ base class เรียก `setUpViews()` ให้ ทุกหน้าจอจึงมีรูปร่างเหมือนกัน
 - **`R.string.coffee_greeting`** — `R` คือ class ที่ระบบสร้างจากทุกไฟล์ใน `res/` ใช้อ้างถึง resource จากโค้ด
 
 **จุดที่คนมักติด**
@@ -394,7 +394,7 @@ override fun setUpViews() {
 **ถามผู้เรียน:** หลังหมุนจอ คำว่า "ลาเต้" ยังอยู่ไหม และทำไม
 
 **อธิบาย:** หมุนจอแล้ว Android **ทำลาย Activity ตัวเดิมและสร้างตัวใหม่** ดูได้จาก `onDestroy` ตามด้วย `onCreate` ทุกอย่างที่เก็บไว้ใน Activity จึงหายไปด้วย
-นี่คือเหตุผลหลักที่ทีมไม่เก็บข้อมูลไว้ใน Activity และเป็นโจทย์ของ session หน้า
+นี่คือเหตุผลหลักที่โปรเจกต์นี้ไม่เก็บข้อมูลไว้ใน Activity และเป็นโจทย์ของ session หน้า
 
 ## สรุป session 1
 
@@ -422,7 +422,7 @@ override fun setUpViews() {
 
 ให้ทุกคนกดปุ่มแล้วหมุนจออีกครั้ง ข้อความหาย
 
-**พูด:** เราต้องการที่เก็บข้อมูลที่ **อยู่รอดเมื่อ Activity ถูกสร้างใหม่** สิ่งนั้นคือ **ViewModel** ทีมใช้รูปแบบที่เรียกว่า MVVM:
+**พูด:** เราต้องการที่เก็บข้อมูลที่ **อยู่รอดเมื่อ Activity ถูกสร้างใหม่** สิ่งนั้นคือ **ViewModel** โปรเจกต์นี้ใช้รูปแบบที่เรียกว่า MVVM:
 
 - **Activity** บอก ViewModel ว่าผู้ใช้ทำอะไร และแสดงสิ่งที่ ViewModel บอก
 - **ViewModel** ตัดสินใจและเก็บ state ของหน้าจอ โดยไม่รู้จัก View ใดเลย
@@ -459,7 +459,7 @@ class CoffeeMenuViewModel : ViewModel() {
 
 **อธิบายหลังเฉลย**
 
-- **คู่ `_recommendation` / `recommendation`** — ตัวที่แก้ค่าได้เป็น private ข้างนอกเห็นแค่ตัวอ่านอย่างเดียว เพื่อให้มีแต่ ViewModel ที่เปลี่ยน state ได้ ทุก ViewModel ในโปรเจกต์จริงเขียนคู่แบบนี้
+- **คู่ `_recommendation` / `recommendation`** — ตัวที่แก้ค่าได้เป็น private ข้างนอกเห็นแค่ตัวอ่านอย่างเดียว เพื่อให้มีแต่ ViewModel ที่เปลี่ยน state ได้ ทุก ViewModel ในโปรเจกต์นี้เขียนคู่แบบนี้
 - **ViewModel ไม่มี `binding`** — ถ้าเห็นใครพยายามตั้งข้อความของ View จากในนี้ แปลว่ากำลังทำผิดชั้น
 
 ## ภารกิจ 2 — ให้ Activity ใช้ ViewModel
@@ -565,15 +565,15 @@ private val coffeeModule = module {
 
 | ไฟล์ (ใน module `apilayer`) | ชี้ให้เห็น |
 |---|---|
-| `repository/coffee/GetRecommendedCoffeeApi.kt` | `@POST("v1/coffee/recommended")` คือ path ของ API, `GetRecommendedCoffeeResponse` คือรูปร่างของข้อมูลที่ได้กลับมา, `@SerializedName("Name")` จับคู่ชื่อใน JSON กับชื่อตัวแปร, Request และ Response สืบทอด `FormData`, และ `FORM_HEAD_REQ` คือรหัสฟอร์มของ API นี้ |
-| `repository/coffee/GetRecommendedCoffeeRepository.kt` | `getBaseData(request, FormHead(...))` ห่อ request ลงซอง แล้ว `requestFormData(...)` ยิง API และแกะซองขากลับ คืน `Result` ที่เป็นได้สองทาง: `Success` หรือ `Error` |
+| `repository/coffee/GetRecommendedCoffeeApi.kt` | `@POST("v1/coffee/recommended")` คือ path ของ API, `GetRecommendedCoffeeResponse` คือรูปร่างของข้อมูลที่ได้กลับมา, `@SerializedName("Name")` จับคู่ชื่อใน JSON กับชื่อตัวแปร, Request และ Response สืบทอด `FormData`, และ `API_CODE` คือรหัสฟอร์มของ API นี้ |
+| `repository/coffee/GetRecommendedCoffeeRepository.kt` | `getBaseData(request, ApiHeader(...))` ห่อ request ลงซอง แล้ว `requestData(...)` ยิง API และแกะซองขากลับ คืน `Result` ที่เป็นได้สองทาง: `Success` หรือ `Error` |
 | `app/src/main/assets/apiData/coffee/recommended_1.json` | JSON ที่ mock ใช้ตอบ เพราะเราไม่มี server จริง ให้สังเกตว่าข้อมูลจริง (`Name`, `Price`) อยู่ใน `Form` → `FormData` ไม่ได้อยู่ชั้นนอกสุด |
-| `app/src/main/assets/apiData/coffee/recommended_error.json` | คำตอบตอนทำรายการไม่สำเร็จ: HTTP ยังสำเร็จ แต่ใน `FormData` มี `RetMsgCode` และ `RetMessage` |
+| `app/src/main/assets/apiData/coffee/recommended_error.json` | คำตอบตอนทำรายการไม่สำเร็จ: HTTP ยังสำเร็จ แต่ใน `FormData` มี `ErrorCode` และ `ErrorMessage` |
 
-**พูดเรื่องซอง:** ทุก API ของโปรเจกต์จริงส่งและรับข้อมูลในซองเดียวกัน คือ `Form` ที่มี `FormHead` (รหัสบอกว่าเป็นฟอร์มของ API ไหน) กับ `FormData` (ข้อมูลจริง)
+**พูดเรื่องซอง:** ทุก API ของโปรเจกต์นี้ส่งและรับข้อมูลในซองเดียวกัน คือ `Form` ที่มี `ApiHeader` (รหัสบอกว่าเป็นฟอร์มของ API ไหน) กับ `FormData` (ข้อมูลจริง)
 class ของซองอยู่ที่ `networks/model/BaseModel.kt` ให้ผู้เรียนเปิดดู มีแค่ 4 class สั้น ๆ
 ข้อดีสำหรับเรา: การห่อและแกะซองจบในชั้น Repository ทั้งหมด UseCase, ViewModel และหน้าจอเห็นแค่ข้อมูลข้างใน
-ข้อที่ต้องจำ: server แจ้งว่า "ทำรายการไม่สำเร็จ" ได้สองทาง คือ HTTP error และ `RetMsgCode` ในซอง ซึ่ง `requestFormData` แปลงทั้งสองทางเป็น `Result.Error` ให้แล้ว
+ข้อที่ต้องจำ: server แจ้งว่า "ทำรายการไม่สำเร็จ" ได้สองทาง คือ HTTP error และ `ErrorCode` ในซอง ซึ่ง `requestData` แปลงทั้งสองทางเป็น `Result.Error` ให้แล้ว
 
 **พูด:** ระหว่าง Repository กับ ViewModel ยังขาดอีกหนึ่งชั้นคือ **UseCase** ซึ่งเราจะเขียนกันเอง
 
@@ -662,7 +662,7 @@ class CoffeeMenuViewModel(
 
 - **`Result` กับ `Response` ต่างกัน** — `Result` คือผลของงาน (สำเร็จหรือพลาด) ส่วน `Response` คือสถานะของหน้าจอ (มี "กำลังโหลด" เพิ่ม) ViewModel เป็นคนแปลงจากอย่างแรกเป็นอย่างหลัง
 - **ทำไมรวมเป็นค่าเดียว** — ถ้าแยกเป็นตัวแปร `isLoading`, `data`, `error` สามตัว มันขัดกันเองได้ เช่น กำลังโหลดและมี error พร้อมกัน
-- **รูปแบบนี้ซ้ำทุก ViewModel** — ในโปรเจกต์จริงจะเห็น function หน้าตาแบบนี้หลายสิบตัว ต่างกันแค่ชื่อ
+- **รูปแบบนี้ซ้ำทุก ViewModel** — ในโปรเจกต์ขนาดใหญ่จะเห็น function หน้าตาแบบนี้หลายสิบตัว ต่างกันแค่ชื่อ
 
 **จุดที่คนมักติด**
 
@@ -699,7 +699,7 @@ override fun observeViewModel() {
 - **`handleResponse`** — แตก 3 สถานะให้: แสดงและซ่อนวงโหลด, แสดง dialog เมื่อผิดพลาด เราเขียนแค่กรณีสำเร็จ ทุกหน้าจอจึงจัดการ error เหมือนกันโดยไม่ต้องเขียนซ้ำ เปิด `core/extension/ResultHandleExtension.kt` ให้ดู
 - **`.orEmpty()` และ `?: 0`** — field ของ Response เป็น nullable เพราะ server อาจไม่ส่งมา โค้ดจริงจึงมีการกันค่า null แบบนี้ทุกที่
 - **ดู request จริง** — เปิด Logcat กรอง `tag:okhttp.OkHttpClient` จะเห็น request และ JSON ที่ตอบกลับทุกครั้ง นี่คือเครื่องมือแรกที่ใช้เมื่อหน้าจอแสดงข้อมูลไม่ถูก
-- **ครั้งที่ 3 ที่ล้ม** — mock ตอบ HTTP 200 แต่ใน `FormData` มี `RetMsgCode`, `requestFormData` เห็นว่าไม่ว่างจึงแปลงเป็น `Failure.ServerError` โดยใช้ `RetMessage` เป็นข้อความ, ViewModel แปลงเป็น `Response.Error`, `handleResponse` แสดง dialog ด้วยข้อความนั้น ให้ผู้เรียนไล่เส้นทางนี้เองทีละชั้น และเปิด `recommended_error.json` ดูประกอบ
+- **ครั้งที่ 3 ที่ล้ม** — mock ตอบ HTTP 200 แต่ใน `FormData` มี `ErrorCode`, `requestData` เห็นว่าไม่ว่างจึงแปลงเป็น `Failure.ServerError` โดยใช้ `ErrorMessage` เป็นข้อความ, ViewModel แปลงเป็น `Response.Error`, `handleResponse` แสดง dialog ด้วยข้อความนั้น ให้ผู้เรียนไล่เส้นทางนี้เองทีละชั้น และเปิด `recommended_error.json` ดูประกอบ
 
 **จุดที่คนมักติด**
 
@@ -721,7 +721,7 @@ override fun observeViewModel() {
 
 # Session 4 — Intent, Router และ deep link
 
-**เป้าหมาย:** ผู้เรียนเปิดหน้าจอได้ทั้ง 3 แบบที่โปรเจกต์จริงใช้ และรู้ว่าแต่ละแบบใช้เมื่อไร
+**เป้าหมาย:** ผู้เรียนเปิดหน้าจอได้ทั้ง 3 แบบ และรู้ว่าแต่ละแบบใช้เมื่อไร
 
 | แบบ | ใช้เมื่อ | ภารกิจ |
 |---|---|---|
@@ -805,7 +805,7 @@ private fun openDetail(coffeeName: String) {
 ## ภารกิจ 2 — เปิดข้าม module ผ่าน Router
 
 **เล่า (วาดบนกระดาน):** ปุ่ม "ดูเมนูขายดี" อยู่ใน `MainActivity` ของ module `app` และต้องเปิด `CoffeeDetailActivity` ของ module `coffee`
-ในแอปนี้ `app` เรียกตรง ๆ ได้ แต่ในโปรเจกต์จริงมี feature หลายสิบตัวที่ต้องเปิดหน้าจอของกันและกัน ถ้าทุกตัวพึ่งกันตรง ๆ จะพันกันและ build ช้า ทีมจึงให้ทุกคนคุยผ่าน **interface ที่อยู่ใน `core`**:
+ในแอปนี้ `app` เรียกตรง ๆ ได้ แต่ในโปรเจกต์ขนาดใหญ่มี feature หลายสิบตัวที่ต้องเปิดหน้าจอของกันและกัน ถ้าทุกตัวพึ่งกันตรง ๆ จะพันกันและ build ช้า โปรเจกต์นี้จึงให้ทุกคนคุยผ่าน **interface ที่อยู่ใน `core`**:
 
 ```
 core:    interface CoffeeRouter            ← ทุก module รู้จัก
@@ -839,11 +839,11 @@ binding.btnBestSeller.singleClick {
 
 - **`by inject()`** — `MainActivity` ขอ `CoffeeRouter` จาก Koin และได้ `CoffeeRoute` มา โดยไม่ต้อง import class ใดจาก module `coffee` เลย ให้ผู้เรียนดู import ของ `MainActivity` เพื่อยืนยัน
 - **บรรทัดผูก** — เปิด `app/di/AppModule.kt` ชี้บรรทัด `factory<CoffeeRouter> { CoffeeRoute() }` ถ้าเพิ่ม Router ตัวใหม่แล้วลืมบรรทัดนี้ จะเจอ `No definition found` แบบเดียวกับ session 2
-- **ในโปรเจกต์จริง** — Router บางตัวอยู่ใน module แยกชื่อ `router` และสร้าง Intent จากชื่อ class ที่เป็น string แนวคิดเหมือนกัน คือผู้เรียกรู้จักแค่ interface
+- **อีกแบบที่พบได้** — บางโปรเจกต์วาง Router ไว้ใน module แยก และสร้าง Intent จากชื่อ class ที่เป็น string แนวคิดเหมือนกัน คือผู้เรียกรู้จักแค่ interface
 
 ## ภารกิจ 3 — เปิดจากลิงก์นอกแอป
 
-**เล่า:** ผู้ใช้กดลิงก์ในแอปอื่น หรือ notification แล้วต้องเข้ามาที่หน้าจอในแอปเราโดยตรง เรียกว่า **deep link** ทีมรวมการรับลิงก์ทั้งหมดไว้ที่ Activity ตัวเดียวชื่อ `SchemeActivity` ซึ่งไม่มีหน้าตา มันทำ 4 อย่าง: รับลิงก์ → ตัดสินใจว่าไปหน้าไหน → ส่งต่อ → ปิดตัวเอง
+**เล่า:** ผู้ใช้กดลิงก์ในแอปอื่น หรือ notification แล้วต้องเข้ามาที่หน้าจอในแอปเราโดยตรง เรียกว่า **deep link** โปรเจกต์นี้รวมการรับลิงก์ทั้งหมดไว้ที่ Activity ตัวเดียวชื่อ `SchemeActivity` ซึ่งไม่มีหน้าตา มันทำ 4 อย่าง: รับลิงก์ → ตัดสินใจว่าไปหน้าไหน → ส่งต่อ → ปิดตัวเอง
 
 ลิงก์ที่เราจะรองรับ:
 
@@ -930,7 +930,7 @@ companion object {
 - **`intent-filter`** — ประกาศต่อระบบว่า "ลิงก์หน้าตาแบบนี้ ส่งมาที่ Activity นี้" ระบบเป็นคนเปิดให้ เราไม่ได้เรียกเอง
 - **`android:exported="true"`** — อนุญาตให้ของนอกแอปเปิด Activity นี้ได้ เทียบกับ Activity ใน `coffee` ที่เป็น `false`
 - **เทียบกับ `MainActivity`** — `intent-filter` ของ `MainActivity` (`MAIN` + `LAUNCHER`) ก็คือการประกาศแบบเดียวกัน ว่า "การกดไอคอนแอป ส่งมาที่นี่"
-- **ทำไมรวมไว้ที่เดียว** — การตรวจว่าล็อกอินหรือยัง ลิงก์ถูกต้องไหม ทำได้ในจุดเดียวก่อนส่งต่อ `SchemeActivity` ของจริงยาวกว่านี้ด้วยเหตุนี้ แต่โครงเดียวกัน
+- **ทำไมรวมไว้ที่เดียว** — การตรวจว่าล็อกอินหรือยัง ลิงก์ถูกต้องไหม ทำได้ในจุดเดียวก่อนส่งต่อ ในแอปขนาดใหญ่ Activity แบบนี้จึงยาวกว่านี้มาก แต่โครงเดียวกัน
 - **ข้อมูลจากลิงก์เชื่อถือไม่ได้** — ใครก็สร้างลิงก์ได้ จึงต้องตรวจค่าก่อนใช้เสมอ เหมือนที่เราตรวจ `isNullOrBlank`
 
 **จุดที่คนมักติด**
@@ -1095,7 +1095,7 @@ override fun onBindViewHolder(holder: CoffeeMenuViewHolder, position: Int) {
 
 # Session 6 — Feature flag, unit test และทำ feature เองทั้งเส้น
 
-**เป้าหมาย:** ผู้เรียนเพิ่ม API หนึ่งเส้นตั้งแต่ชั้น Api จนถึงหน้าจอได้เองโดยไม่มีโครงให้ และรู้จักเครื่องมือประจำวันของโปรเจกต์จริง
+**เป้าหมาย:** ผู้เรียนเพิ่ม API หนึ่งเส้นตั้งแต่ชั้น Api จนถึงหน้าจอได้เองโดยไม่มีโครงให้ และรู้จักเครื่องมือประจำวันของนักพัฒนา
 
 | ลำดับ | ช่วง |
 |---|---|
@@ -1103,11 +1103,11 @@ override fun onBindViewHolder(holder: CoffeeMenuViewHolder, position: Int) {
 | 2 | ภารกิจ 1 — ซ่อน feature หลัง flag |
 | 3 | ภารกิจ 2 — unit test ของ ViewModel |
 | 4 | ภารกิจ 3 — ขนมแนะนำ ทำเองทั้งเส้น |
-| 5 | พาเดินโปรเจกต์จริง |
+| 5 | ทบทวนทั้งโปรเจกต์ |
 
 ## ภารกิจ 1 — ซ่อน feature หลัง flag
 
-**เล่า:** งานที่ยังทำไม่เสร็จก็ถูก merge เข้าโค้ดหลักได้ ถ้าซ่อนไว้หลัง **feature flag** ทีมเปิดให้ผู้ใช้เห็นเมื่อพร้อม โดยไม่ต้องออกแอปเวอร์ชันใหม่
+**เล่า:** งานที่ยังทำไม่เสร็จก็ถูก merge เข้าโค้ดหลักได้ ถ้าซ่อนไว้หลัง **feature flag** แล้วเปิดให้ผู้ใช้เห็นเมื่อพร้อม โดยไม่ต้องออกแอปเวอร์ชันใหม่
 
 **โจทย์**
 
@@ -1123,11 +1123,11 @@ override fun onBindViewHolder(holder: CoffeeMenuViewHolder, position: Int) {
 **อธิบายหลังเฉลย**
 
 - โค้ดของ feature ถามผ่าน interface `FeatureFlag` ใน `core` เท่านั้น ไม่รู้ว่าค่ามาจากไหน
-- ในโปรเจกต์จริงค่ามาจาก server และมีไฟล์ implementation ใน `app` ที่นักพัฒนาบังคับเปิด flag บนเครื่องตัวเองตอนพัฒนาได้ ซึ่งเป็นการแก้ที่ **ห้าม commit**
+- ในแอปที่ใช้งานจริง ค่าของ flag มักมาจาก server เพื่อเปิดหรือปิดได้โดยไม่ต้องออกแอปใหม่
 
 ## ภารกิจ 2 — unit test ของ ViewModel
 
-**เล่า:** test ของทีม mock ที่ชั้น **Repository** แล้วใช้ UseCase และ ViewModel ตัวจริง เพื่อตรวจว่า ViewModel แปลงผลเป็นสถานะหน้าจอถูกต้อง
+**เล่า:** test ของโปรเจกต์นี้ mock ที่ชั้น **Repository** แล้วใช้ UseCase และ ViewModel ตัวจริง เพื่อตรวจว่า ViewModel แปลงผลเป็นสถานะหน้าจอถูกต้อง
 
 **โจทย์**
 
@@ -1164,11 +1164,11 @@ fun `get recommended coffee fail`() {
 
 ## ภารกิจ 3 — ขนมแนะนำ ทำเองทั้งเส้น
 
-**เล่า:** นี่คืองานแบบที่จะได้รับในโปรเจกต์จริง มีแค่สเปก ไม่มีโครงให้ ใช้โค้ดของเมนูแนะนำเป็นแบบ
+**เล่า:** นี่คืองานแบบที่จะได้รับในการทำงาน มีแค่สเปก ไม่มีโครงให้ ใช้โค้ดของเมนูแนะนำเป็นแบบ
 
 **สเปก**
 
-- API: `POST v1/dessert/recommended` รหัสฟอร์ม (`FormID`) คือ `DESSERT0101` ไม่มี field ใน request
+- API: `POST v1/dessert/recommended` รหัสฟอร์ม (`ApiCode`) คือ `DESSERT0101` ไม่มี field ใน request
 - `FormData` ของ response: `{ "Name": "ครัวซองต์เนยสด", "Price": 85 }` ห่ออยู่ในซองแบบเดียวกับ API อื่น (mock มีให้แล้วที่ `app/src/main/assets/apiData/dessert/recommended.json`)
 - กด `btnDessert` แล้วแสดงชื่อและราคาที่ `tvDessert` ในรูปแบบเดียวกับเมนูแนะนำ
 
@@ -1176,8 +1176,8 @@ fun `get recommended coffee fail`() {
 
 | # | ไฟล์ | ทำอะไร |
 |---|---|---|
-| 1 | `apilayer/repository/dessert/GetRecommendedDessertApi.kt` (ใหม่) | Request และ Response ที่สืบทอด `FormData`, interface Api ที่รับ `BaseRequest<FormData>` และคืน `Call<BaseResponse<...>>`, ค่าคงที่ `FORM_HEAD_REQ` |
-| 2 | `apilayer/repository/dessert/GetRecommendedDessertRepository.kt` (ใหม่) | Repository ที่ห่อด้วย `getBaseData` แล้วเรียกผ่าน `requestFormData` |
+| 1 | `apilayer/repository/dessert/GetRecommendedDessertApi.kt` (ใหม่) | Request และ Response ที่สืบทอด `FormData`, interface Api ที่รับ `BaseRequest<FormData>` และคืน `Call<BaseResponse<...>>`, ค่าคงที่ `API_CODE` |
+| 2 | `apilayer/repository/dessert/GetRecommendedDessertRepository.kt` (ใหม่) | Repository ที่ห่อด้วย `getBaseData` แล้วเรียกผ่าน `requestData` |
 | 3 | `apilayer/usecase/dessert/GetRecommendedDessertUseCase.kt` (ใหม่) | UseCase |
 | 4 | `apilayer/di/ApiLayerModule.kt` | ลงทะเบียน 3 บรรทัด |
 | 5 | `CoffeeMenuViewModel.kt` | parameter ตัวที่สาม, LiveData คู่ใหม่, function ใหม่ |
@@ -1204,14 +1204,14 @@ fun `get recommended coffee fail`() {
 | ได้ชื่อว่างและราคา 0 | `@SerializedName` ไม่ตรงกับ JSON | ต้องเป็น `Name` และ `Price` ตัวพิมพ์ใหญ่นำ |
 | แอปเด้ง `No definition found for class:'...GetRecommendedDessertApi'` | ลงทะเบียนไม่ครบสามบรรทัด | ดูชุดของ coffee เป็นแบบ |
 
-## พาเดินโปรเจกต์จริง
+## ทบทวนทั้งโปรเจกต์
 
 **สาธิต flavor:** เปลี่ยน Build Variants ของ `app` เป็น `productionDebug` แล้วรัน กดปุ่มแนะนำเมนูจะได้ dialog `Please check your Internet connection` เพราะ flavor นี้ไม่ใช้ mock และ URL ไม่มีอยู่จริง
-อธิบาย: flavor คือแอปเดียวกันที่ชี้ไปคนละ environment ค่าต่าง ๆ อยู่ใน `app/build.gradle` และอ่านผ่าน `BuildConfig` โปรเจกต์จริงมีหลาย flavor เช่น `sit`, `uat`, `production` — **เปลี่ยนกลับเป็น `sitDebug` ก่อนไปต่อ**
+อธิบาย: flavor คือแอปเดียวกันที่ชี้ไปคนละ environment ค่าต่าง ๆ อยู่ใน `app/build.gradle` และอ่านผ่าน `BuildConfig` แอปทั่วไปมักมีหลาย flavor แยกตาม environment — **เปลี่ยนกลับเป็น `sitDebug` ก่อนไปต่อ**
 
-**เทียบกับโปรเจกต์จริง:** เปิด feature module ขนาดเล็กที่เตรียมไว้ ชี้ทีละแถว
+**ทบทวนว่าแต่ละชิ้นอยู่ที่ไหน:** เปิดโปรเจกต์ workshop แล้วชี้ทีละแถว
 
-| สิ่งที่ทำในหลักสูตร | หาได้ที่ไหนในโปรเจกต์จริง |
+| สิ่งที่ทำในหลักสูตร | อยู่ที่ไหน |
 |---|---|
 | `CoffeeMenuActivity` กับ `getViewBinding` / `setUpViews` / `observeViewModel` | `<feature>/ui/.../*Activity.kt` |
 | `CoffeeMenuViewModel` กับคู่ `_xxxResult` / `xxxResult` | `<feature>/ui/.../*ViewModel.kt` |
@@ -1219,20 +1219,17 @@ fun `get recommended coffee fail`() {
 | `viewModel { CoffeeMenuViewModel(get(), ...) }` | `<feature>/di/*Module.kt` |
 | ชุด Api / Repository / UseCase | `apilayer/repository/<กลุ่ม>/` และ `apilayer/usecase/<กลุ่ม>/` |
 | บรรทัดลงทะเบียนสามบรรทัด | `apilayer/di/ApiLayerModule.kt` |
-| `CoffeeRouter` / `CoffeeRoute` / บรรทัดผูก | `core/router/`, `<feature>/route/` หรือ module `router`, `app/.../di/AppModule.kt` |
+| `CoffeeRouter` / `CoffeeRoute` / บรรทัดผูก | `core/router/`, `<feature>/route/`, `app/.../di/AppModule.kt` |
 | `SchemeActivity` | `app/.../scheme/SchemeActivity.kt` |
 | `FeatureFlag` | `core/.../featureflag/` |
-| `MockApiInterceptor` + `assets/apiData/` | interceptor ใน `app/.../public_impl/` และ JSON ใน `app/src/debug/assets/apiData/` |
+| `MockApiInterceptor` + `assets/apiData/` | `app/.../public_impl/` และ `app/src/main/assets/apiData/` |
 | `CoffeeMenuViewModelTest` | `<feature>/src/test/` |
 
-**สิ่งที่โปรเจกต์จริงมีเพิ่ม และจะเจอในงานแรก** (บอกไว้ให้ไม่ตกใจ ไม่ต้องอธิบายลึก):
+**สิ่งที่โปรเจกต์ขนาดใหญ่มักมีเพิ่ม** (บอกไว้ให้ไม่ตกใจ ไม่ต้องอธิบายลึก):
 
-- หัวซองของจริงเป็น class เฉพาะของโปรเจกต์ที่มีข้อมูลมากกว่า `FormID` และ `requestFormData` ของจริงแยก error ตาม HTTP code ละเอียดกว่า แต่วิธีใช้จากฝั่ง Repository เหมือนกับที่ทำใน workshop
-- callback ใน `res.result({ ... }, { ... })` ต้องคืนค่า จึงเห็น `return@result it` ต่อท้าย
-- ชื่อ string เป็นรหัสย่อตามด้วยตัวเลข ต้องค้นใน `strings.xml` ว่าหมายถึงข้อความใด
-- `BaseActivity` ทำงานเพิ่มหลายอย่าง เช่น ตรวจ session หมดอายุ และมี function สำหรับตั้ง toolbar ของหน้าจอ
-- บาง layout ห่อด้วยแท็ก `<layout>` และบางหน้าจอเป็น Fragment ซึ่งมี class แม่ของ Fragment ที่รูปร่างเดียวกับ `NewBaseActivity`
-- ก่อนรันครั้งแรกต้องตั้งค่าใน `local.properties` ตาม README ของโปรเจกต์
+- ซองของ API มีข้อมูลมากกว่านี้ และการแยกชนิดของ error ละเอียดกว่านี้ แต่วิธีใช้จากฝั่ง Repository เหมือนกับที่ทำใน workshop
+- class แม่ของ Activity ทำงานเพิ่มหลายอย่าง เช่น จัดการ toolbar ของหน้าจอ
+- บาง layout ห่อด้วยแท็ก `<layout>` (DataBinding) และบางหน้าจอเป็น Fragment
 
 **ปิดหลักสูตรด้วยขั้นตอนรับงานใหม่:**
 
@@ -1248,8 +1245,7 @@ fun `get recommended coffee fail`() {
 
 - **ผู้เรียนเคยเขียน Android แล้ว** — ถามตอนเริ่ม ถ้าใช่ ให้เดิน session 1 กับ 2 เร็วขึ้นโดยข้ามช่วง "เล่า" ที่ผู้เรียนรู้แล้ว แต่ยังให้ทำภารกิจครบ เพราะ session ถัดไปต้องใช้โค้ดนั้น
 - **ถ้าต้องเลือกทำบางส่วน** — สอน session 1–4 ให้ครบก่อน session 5–6 ทำทีหลังได้
-- **Session 6 ช่วง "พาเดินโปรเจกต์จริง"** — ถ้าผู้เรียนมี  ในเครื่อง ขอ path แล้วอ่านแบบ read-only เพื่อชี้ไฟล์จริงตามตาราง ห้ามแก้อะไรในนั้น ถ้าไม่มี ให้ใช้ตารางอย่างเดียว
 - **คนเป็นผู้สอนหน้าห้อง** — บทสอนของแต่ละ session ใช้ได้เหมือนกัน
-- **หัวข้อที่โปรเจกต์จริงใช้แต่ยังไม่ได้สอน** — Fragment, การรับผลกลับด้วย `startActivityForResult`, DataBinding, custom view ใน `core/widget` ถ้าผู้เรียนถาม ให้บอกว่ามีและชี้ว่าอยู่ตรงไหนในโปรเจกต์จริง
+- **หัวข้อที่ยังไม่ได้สอน** — Fragment, การรับผลกลับจากหน้าจออื่น และ DataBinding ถ้าผู้เรียนถาม ให้บอกว่าอยู่นอกขอบเขตของหลักสูตรนี้
 
 เมื่อแก้โจทย์หรือเฉลยในไฟล์นี้ ให้แก้ไฟล์ใน `solutions/` ให้ตรงกัน และตรวจตามขั้นตอนท้าย [agent.md](./agent.md)

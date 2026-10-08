@@ -4,7 +4,6 @@
 
 | | |
 |---|---|
-| ที่มาของหัวข้อ | senior: "Layout view ทุกประเภท" |
 | ทำไมต้องเรียน | ทุกหน้าจอเริ่มจาก layout และงานแรกของคนใหม่มักเป็นการแก้หน้าตา |
 | ผู้เรียน | ผ่านบทที่ 01 แล้ว: เปิดโปรเจกต์ รันแอป และหาไฟล์ใน `res/` ได้ |
 | จังหวะ | ไม่จับเวลา ไม่มีจุดพักที่กำหนด ผู้เรียนหยุดตรงไหนก็ได้ ให้จดลง `progress.md` |
@@ -80,7 +79,7 @@ test อ่านไฟล์ XML ของผู้เรียนตรง ๆ
 | 7 | `RecyclerView` ระดับ layout | `activity_menu_list.xml`, `item_menu.xml` |
 | 8 | การนำกลับมาใช้ | `lesson02_step8_reuse.xml`, `styles_lesson02.xml` |
 | 9 | ViewBinding และ custom view | `activity_order_form.xml`, `OrderFormActivity.kt` |
-| ปิด | อ่าน layout ของโปรเจกต์จริง | |
+| ปิด | อ่าน layout ของ workshop | |
 
 ขั้นที่ 4 สำคัญที่สุด เพราะ workshop ใช้ `ConstraintLayout` เกือบทุกหน้า อย่าไปขั้นถัดไปจนกว่าผู้เรียนจะอธิบายได้ว่าทำไม View ที่ไม่มี constraint จึงไปกองที่มุมซ้ายบน
 
@@ -702,11 +701,11 @@ test ของขั้นนี้ตรวจจากข้อความใ
 
 - ใน workshop บรรทัด `inflate` กับ `setContentView` ย้ายไปอยู่ใน class แม่ Activity แต่ละตัวเหลือแค่ `override fun getViewBinding() = ActivityXxxBinding.inflate(layoutInflater)` แล้วใช้ `binding.xxx` ได้เลย
 - workshop ใช้ `singleClick { }` แทน `setOnClickListener { }` เพื่อกันการกดรัว แนวคิดเดียวกัน
-- โปรเจกต์จริงมี custom view ของทีมจำนวนมาก เช่น ปุ่มและช่องกรอกที่มีหน้าตาของแบรนด์ วิธีใช้คือวาง tag ชื่อเต็มแล้วตั้งค่าผ่าน `app:` แบบข้อ 9.1
+- โปรเจกต์ขนาดใหญ่มักมี custom view ของตัวเองจำนวนมาก เช่น ปุ่มและช่องกรอกที่มีหน้าตาของแบรนด์ วิธีใช้คือวาง tag ชื่อเต็มแล้วตั้งค่าผ่าน `app:` แบบข้อ 9.1
 
 ---
 
-## ปิดบท — อ่าน layout ของโปรเจกต์จริง
+## ปิดบท — อ่าน layout ของ workshop
 
 แสดง layout นี้ให้ผู้เรียน (ย่อจาก `workshop/app/src/main/res/layout/activity_main.xml`) แล้วถามทีละข้อ รอคำตอบก่อนเฉลย
 

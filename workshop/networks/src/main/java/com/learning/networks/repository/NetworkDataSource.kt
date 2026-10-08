@@ -10,7 +10,7 @@ import java.io.IOException
 /** base ของทุก Repository: ยิง API แกะซอง แล้วแปลงทุกผลลัพธ์ (รวมถึง exception) ให้เป็น [Result] */
 abstract class NetworkDataSource {
 
-    fun <R : FormData> requestFormData(call: Call<BaseResponse<R>>): Result<Failure, R> {
+    fun <R : FormData> requestData(call: Call<BaseResponse<R>>): Result<Failure, R> {
         return try {
             val response = call.clone().execute()
             if (response.isSuccessful) {
@@ -18,9 +18,9 @@ abstract class NetworkDataSource {
                 when {
                     formData == null ->
                         Result.Error(Failure.UnKnownError(IllegalArgumentException("No Data")))
-                    // HTTP สำเร็จ แต่ server แจ้งว่าทำรายการไม่ได้ผ่าน RetMsgCode
-                    !formData.retMsgCode.isNullOrEmpty() ->
-                        Result.Error(Failure.ServerError(formData, formData.retMessage ?: "API ERROR"))
+                    // HTTP สำเร็จ แต่ server แจ้งว่าทำรายการไม่ได้ผ่าน ErrorCode
+                    !formData.errorCode.isNullOrEmpty() ->
+                        Result.Error(Failure.ServerError(formData, formData.errorMessage ?: "API ERROR"))
                     else -> Result.Success(formData)
                 }
             } else {

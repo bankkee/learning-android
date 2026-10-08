@@ -21,6 +21,6 @@ interface GetRecommendedCoffeeApi {
     fun getRecommendedCoffee(@Body reqParam: BaseRequest<FormData>): Call<BaseResponse<GetRecommendedCoffeeResponse>>
 
     companion object {
-        const val FORM_HEAD_REQ = "COFFEE0101"
+        const val API_CODE = "COFFEE0101"
     }
 }

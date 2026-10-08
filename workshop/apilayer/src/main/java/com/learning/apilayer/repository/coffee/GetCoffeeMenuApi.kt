@@ -24,6 +24,6 @@ interface GetCoffeeMenuApi {
     fun getCoffeeMenu(@Body reqParam: BaseRequest<FormData>): Call<BaseResponse<GetCoffeeMenuResponse>>
 
     companion object {
-        const val FORM_HEAD_REQ = "COFFEE0201"
+        const val API_CODE = "COFFEE0201"
     }
 }

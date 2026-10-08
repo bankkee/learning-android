@@ -45,7 +45,7 @@ class MockApiInterceptor(private val context: Context) : Interceptor {
         private const val DELAY_MILLIS = 1500L
 
         private val MOCKS = mapOf(
-            // ครั้งที่ 3 ตั้งใจให้ server ตอบว่าทำรายการไม่สำเร็จ (มี RetMsgCode) เพื่อให้เห็นสถานะ Error
+            // ครั้งที่ 3 ตั้งใจให้ server ตอบว่าทำรายการไม่สำเร็จ (มี ErrorCode) เพื่อให้เห็นสถานะ Error
             "v1/coffee/recommended" to listOf(
                 "apiData/coffee/recommended_1.json",
                 "apiData/coffee/recommended_2.json",

@@ -2,7 +2,6 @@
 
 > **สถานะ: โครงของบทเรียน** ยังไม่มีบทสอนเต็มและยังไม่มีโค้ดตัวอย่าง ใช้สอนไม่ได้จนกว่าจะเขียนเพิ่ม
 
-- **ที่มาของหัวข้อ:** senior: "element e.g. recycleView pager"
 - **ทำไมต้องเรียน:** หน้าจอส่วนใหญ่ของแอปจริงเป็นรายการ หรือเป็นแท็บที่ปัดได้
 - **ต้องรู้ก่อน:** บทที่ 04, บทที่ 08
 - **เรียนจบแล้วไปที่:** workshop Session 5 — รายการด้วย RecyclerView (ดู [learning.md](../learning.md))
@@ -24,7 +23,7 @@
 - **Fragment** เท่าที่ pager ต้องใช้: สร้าง, ส่ง argument, lifecycle ของ view
 - **Pager**: `ViewPager2`, `FragmentStateAdapter`, `TabLayout` + `TabLayoutMediator`
 - ViewModel ร่วมกันระหว่าง Activity กับ Fragment
-- **ต้องยืนยันกับโปรเจกต์จริง**: ใช้ `ViewPager` รุ่นใด เพื่อสอนให้ตรง
+- **ยังต้องตัดสินใจ**: จะสอน `ViewPager` รุ่นใด
 
 ## ตัวอย่างที่จะใช้สอน
 

@@ -5,11 +5,11 @@
 
 ## โปรเจกต์นี้คืออะไร
 
-แอปร้านกาแฟขนาดเล็กสำหรับสอนคนที่ไม่เคยเขียน Android ให้ทำงานกับโปรเจกต์จริงของทีมได้
+แอปร้านกาแฟขนาดเล็กสำหรับสอนคนที่ไม่เคยเขียน Android ให้ทำงานกับโปรเจกต์ Android หลาย module ได้
 workshop มี 6 session ไม่จับเวลา ผู้เรียนเติมโค้ดตรง `TODO(Session N · ภารกิจ M)` ทีละขั้น
 
-โครงสร้างย่อส่วนมาจากโปรเจกต์จริง สิ่งที่ยกมาคือ **รูปแบบ** เท่านั้น
-ไม่มีโค้ดธุรกิจ, URL, token หรือชื่อ API ของโปรเจกต์จริงอยู่ในนี้ และห้ามเพิ่มเข้ามา
+โครงสร้างเป็นแบบที่พบในแอปขนาดใหญ่: หลาย module, MVVM, Koin และ Retrofit
+ข้อมูลทั้งหมดเป็นของสมมุติ ห้ามเพิ่ม URL, token หรือชื่อ API ของระบบจริงใด ๆ เข้ามา
 
 ## Module
 
@@ -90,7 +90,7 @@ Activity ──► ViewModel ──► UseCase ──► Repository ──► Ap
 | Activity | feature `ui/` | แสดงผล, รับการกด, observe LiveData | คำนวณ, เรียก UseCase/Repository ตรง ๆ |
 | ViewModel | feature `ui/` | ถือ state ของหน้าจอเป็น LiveData, สั่ง UseCase | แตะ View หรือ `binding` |
 | UseCase | `apilayer/usecase/` | งานหนึ่งอย่าง: รัน `run()` บน `Dispatchers.IO` แล้วเรียก callback บน main thread | ถือ state ของหน้าจอ |
-| Repository | `apilayer/repository/` | สืบทอด `NetworkDataSource`, ห่อ request ด้วย `getBaseData()` แล้วเรียก Api ผ่าน `requestFormData()` ซึ่งแกะซองและแปลงทุกผลลัพธ์เป็น `Result` | รู้จัก ViewModel หรือ UI |
+| Repository | `apilayer/repository/` | สืบทอด `NetworkDataSource`, ห่อ request ด้วย `getBaseData()` แล้วเรียก Api ผ่าน `requestData()` ซึ่งแกะซองและแปลงทุกผลลัพธ์เป็น `Result` | รู้จัก ViewModel หรือ UI |
 | Api | `apilayer/repository/` | interface ของ Retrofit คืน `Call<Response>` | มี logic |
 
 ชนิดข้อมูลสองตัวที่ต้องแยกให้ออก:
@@ -118,7 +118,7 @@ Activity จึง override แค่ `getViewBinding()`, `observeViewModel()`, 
 - `<Feature><Purpose>Activity`, `<Feature><Purpose>ViewModel` เช่น `CoffeeMenuActivity`, `CoffeeMenuViewModel`
 - ชุด API หนึ่งเส้น: `GetXxxApi`, `GetXxxRequest`, `GetXxxResponse`, `GetXxxRepository`, `GetXxxUseCase`
 - field ของ Response เป็น nullable และใช้ `@SerializedName("PascalCase")`
-- Request และ Response สืบทอด `FormData`, Api รับ `BaseRequest<FormData>` และคืน `Call<BaseResponse<XxxResponse>>`, รหัสฟอร์มอยู่ใน `companion object` ของ Api ชื่อ `FORM_HEAD_REQ`, และ Repository รับ parameter เป็น `FormData`
+- Request และ Response สืบทอด `FormData`, Api รับ `BaseRequest<FormData>` และคืน `Call<BaseResponse<XxxResponse>>`, รหัสฟอร์มอยู่ใน `companion object` ของ Api ชื่อ `API_CODE`, และ Repository รับ parameter เป็น `FormData`
 - id ใน layout เป็น camelCase มีคำนำหน้าชนิด View: `tvGreeting`, `btnRecommend`, `rvMenu`
 
 **LiveData ใน ViewModel** — ตัวที่แก้ได้เป็น private มีขีดล่าง, ตัวที่เปิดให้ข้างนอกอ่านได้อย่างเดียว
@@ -169,11 +169,11 @@ flavor `sit` ไม่ยิง server จริง `MockApiInterceptor` ดั�
 
 | Path | คำตอบ |
 |---|---|
-| `v1/coffee/recommended` | วน 3 แบบ: ลาเต้ → มอคค่า → error ทางธุรกิจ (HTTP 200 ที่มี `RetMsgCode`) ตั้งใจ เพื่อให้เห็นสถานะ Error |
+| `v1/coffee/recommended` | วน 3 แบบ: ลาเต้ → มอคค่า → error ทางธุรกิจ (HTTP 200 ที่มี `ErrorCode`) ตั้งใจ เพื่อให้เห็นสถานะ Error |
 | `v1/coffee/menu` | รายการ 6 เมนู |
 | `v1/dessert/recommended` | ครัวซองต์เนยสด (ใช้ใน session 6) |
 
-เพิ่ม API ใหม่: วางไฟล์ JSON ใน `assets/apiData/` โดยห่อข้อมูลในซอง `{ "Form": [ { "FormHead": { "FormID": "..." }, "FormData": { ... } } ] }` แล้วเพิ่ม path ใน `MOCKS` ของ `MockApiInterceptor`
+เพิ่ม API ใหม่: วางไฟล์ JSON ใน `assets/apiData/` โดยห่อข้อมูลในซอง `{ "Form": [ { "Header": { "ApiCode": "..." }, "FormData": { ... } } ] }` แล้วเพิ่ม path ใน `MOCKS` ของ `MockApiInterceptor`
 request และ response ทุกครั้งดูได้ใน Logcat ด้วย tag `okhttp.OkHttpClient`
 
 ## Build
@@ -192,7 +192,7 @@ request และ response ทุกครั้งดูได้ใน Logcat 
 | AndroidX Lifecycle | 2.4.0 |
 | Mockito / mockito-kotlin | 4.2.0 / 2.1.0 |
 
-ค่าเหล่านี้ตรงกับโปรเจกต์จริงและอยู่ใน `buildSrc/src/main/java/Dependencies.kt` ไฟล์ Gradle เป็น Groovy DSL (`build.gradle`)
+ค่าเหล่านี้อยู่ใน `buildSrc/src/main/java/Dependencies.kt` ไฟล์ Gradle เป็น Groovy DSL (`build.gradle`)
 
 Product flavor (dimension `version`):
 
@@ -212,19 +212,18 @@ Product flavor (dimension `version`):
 สถานะการตรวจล่าสุด (2026-10-08, JDK 21): starter build ผ่าน, เฉลยทั้ง 6 session build ผ่านเมื่อทับตามลำดับ, unit test ของ session 6 ผ่าน
 ยังไม่ได้รันบน emulator หรือเครื่องจริง
 
-## จุดที่ต่างจากโปรเจกต์จริงโดยตั้งใจ
+## สิ่งที่ตั้งใจทำให้ง่าย
 
-| เรื่อง | โปรเจกต์จริง | โปรเจกต์นี้ | เหตุผล |
-|---|---|---|---|
-| จำนวน feature module | หลายสิบ | 1 | ให้ผู้เรียนเห็นทั้งระบบได้ในครั้งเดียว |
-| รูปแบบ request/response | ซอง `BaseRequest<FormData>` / `BaseResponse` ที่หัวซองเป็น class เฉพาะของโปรเจกต์และมี signature | ซองรูปเดียวกัน แต่หัวซองมีแค่ `FormID` และไม่มี signature | ตัดสิ่งที่เฉพาะกับ backend ของโปรเจกต์จริง |
-| `NetworkDataSource` | `requestFormData()` แยก error ตาม HTTP code หลายกรณีและบันทึก log | `requestFormData()` ที่ตรวจแค่ `RetMsgCode`, HTTP 5xx และ network error | ให้อ่านจบได้ในหน้าเดียว |
-| `Result.result(...)` | lambda ต้องคืนค่า `Any` จึงเห็น `return@result it` ในโค้ดจริง | lambda คืน `Unit` | ตัดสิ่งที่มือใหม่ต้องอธิบายเพิ่ม |
-| `BaseActivity` | มี session timeout, ตรวจความปลอดภัย, toolbar, สลับภาษา | เหลือ loading, dialog error และ log lifecycle | ไม่เกี่ยวกับสิ่งที่สอน |
-| Router | บางตัวอยู่ใน module `router` และสร้าง Intent จากชื่อ class ที่เป็นข้อความ | อยู่ใน `<feature>/route/` ทั้งหมด | แบบที่ง่ายกว่าและมีใช้จริงเหมือนกัน |
-| Layout | บางไฟล์ห่อด้วย `<layout>` (DataBinding) | ViewBinding อย่างเดียว | ลดแนวคิดที่ต้องสอน |
-| Feature flag | ดึงจาก server | set ในโค้ด | ไม่ต้องมี server |
-| Unit test JVM | — | `coffee/build.gradle` ตั้ง `-Dnet.bytebuddy.experimental=true` | Mockito 4.2.0 ยังไม่รู้จัก JDK ที่ใหม่กว่า 18 |
+| เรื่อง | โปรเจกต์นี้ | เหตุผล |
+|---|---|---|
+| จำนวน feature module | 1 | ให้ผู้เรียนเห็นทั้งระบบได้ในครั้งเดียว |
+| ซองของ request/response | หัวซองมีแค่ `ApiCode` | ให้เห็นแนวคิดของซองโดยไม่มีรายละเอียดของ backend |
+| `NetworkDataSource` | `requestData()` ตรวจแค่ `ErrorCode`, HTTP 5xx และ network error | ให้อ่านจบได้ในหน้าเดียว |
+| `BaseActivity` | มีแค่ loading, dialog error และ log lifecycle | ไม่เกี่ยวกับสิ่งที่สอน |
+| Router | อยู่ใน `<feature>/route/` ทั้งหมด | แบบที่ง่ายที่สุด |
+| Layout | ViewBinding อย่างเดียว | ลดแนวคิดที่ต้องสอน |
+| Feature flag | set ในโค้ด | ไม่ต้องมี server |
+| Unit test JVM | `coffee/build.gradle` ตั้ง `-Dnet.bytebuddy.experimental=true` | Mockito 4.2.0 ยังไม่รู้จัก JDK ที่ใหม่กว่า 18 |
 
 ## ก่อนแก้โปรเจกต์นี้
 
@@ -232,4 +231,4 @@ Product flavor (dimension `version`):
 2. `solutions/session-N/` เก็บเฉพาะไฟล์ที่เปลี่ยนใน session นั้น ในสภาพ "จบ session N" และใช้ path เดียวกับโปรเจกต์ ไฟล์เฉลยยังคง `TODO` ของ session ถัดไปไว้
 3. เมื่อแก้ไฟล์ที่ผู้เรียนต้องแตะ ให้แก้ทุกเวอร์ชันของไฟล์นั้นใน `solutions/` และโค้ดใน `learning.md` ให้ตรงกัน
 4. ตรวจหลังแก้ทุกครั้ง: starter ต้อง build ผ่าน, แล้วทับเฉลยทีละ session และ build ทุกรอบ, จบด้วยรัน unit test
-5. เพิ่ม convention ใหม่ก็ต่อเมื่อโปรเจกต์จริงทำแบบนั้น จุดประสงค์คือให้เหมือนของจริง ไม่ใช่ให้ทันสมัยที่สุด
+5. คง library และ convention ชุดเดิมไว้ให้สม่ำเสมอทั้งหลักสูตร อย่าเปลี่ยนเป็นของใหม่เฉพาะบางจุด
