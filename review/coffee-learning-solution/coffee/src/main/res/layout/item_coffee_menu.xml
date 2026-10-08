@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ผู้เรียนสร้างไฟล์นี้เองทั้งไฟล์: Session 5 · ภารกิจ 3 -->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground"
+    android:paddingTop="@dimen/default_16"
+    android:paddingBottom="@dimen/default_16">
+
+    <TextView
+        android:id="@+id/tvItemName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/default_8"
+        android:textColor="@color/appBrownDark"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@id/tvItemPrice"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvItemPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/appGrey"
+        android:textSize="16sp"
+        app:layout_constraintBaseline_toBaselineOf="@id/tvItemName"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

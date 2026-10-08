@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- บทที่ 02 ขั้นที่ 7 — layout ของหนึ่งแถวในรายการเมนู -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="8dp"
+    android:background="@color/appWhite"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/ivItem"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_coffee" />
+
+    <TextView
+        android:id="@+id/tvItemName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/appBrownDark"
+        android:textSize="18sp"
+        tools:text="ลาเต้" />
+
+    <TextView
+        android:id="@+id/tvItemPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/appGrey"
+        android:textSize="14sp"
+        tools:text="65 บาท" />
+
+</LinearLayout>

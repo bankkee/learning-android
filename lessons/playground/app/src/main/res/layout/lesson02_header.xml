@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- บทที่ 02 ขั้นที่ 8 — ก้อนหัวของหน้าจอ แยกเป็นไฟล์เพื่อให้หลายหน้าจอ include ไปใช้ -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/ivHeaderIcon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_coffee" />
+
+    <TextView
+        android:id="@+id/tvHeaderTitle"
+        style="@style/MenuTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/default_16"
+        android:text="@string/reuse_header_title" />
+
+</LinearLayout>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ชื่อเดียวกับที่ workshop ใช้ -->
+    <dimen name="default_8">8dp</dimen>
+    <dimen name="default_16">16dp</dimen>
+    <dimen name="default_24">24dp</dimen>
+</resources>

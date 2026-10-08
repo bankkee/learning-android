@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- บทที่ 02 ขั้นที่ 8 -->
+
+    <!-- ตัวอย่างที่ทำไว้แล้ว: ใช้ใน lesson02_header.xml -->
+    <style name="MenuTitle">
+        <item name="android:textColor">@color/appBrownDark</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- แบบฝึก 8.3: เพิ่ม style ชื่อ ShopInfoLabel ที่นี่ -->
+</resources>

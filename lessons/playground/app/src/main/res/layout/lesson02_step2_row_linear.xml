@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- บทที่ 02 ขั้นที่ 2 — แถวเมนูด้วย LinearLayout -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rowMenu"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#FFFFFF"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/ivCoffee"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_coffee" />
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/menu_latte_name"
+        android:textColor="#4B3425"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/menu_latte_description"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tvPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/menu_latte_price"
+        android:textColor="#6F4E37"
+        android:textSize="16sp" />
+
+</LinearLayout>

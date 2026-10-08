@@ -1,0 +1,77 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+}
+
+android {
+    compileSdkVersion App.compileSdk
+    namespace "com.learning.app"
+
+    defaultConfig {
+        applicationId App.id
+        minSdkVersion App.minSdk
+        targetSdkVersion App.targetSdk
+        versionCode App.versionCode
+        versionName App.versionName
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    // แต่ละ flavor คือแอปเดียวกันที่ชี้ไปคนละ environment เลือกได้ที่ Build Variants ใน Android Studio
+    flavorDimensions "version"
+    productFlavors {
+        create("sit") {
+            isDefault true
+            applicationIdSuffix = ".sit"
+            resValue("string", "app_name", "Coffee (SIT)")
+            buildConfigField("String", "BASE_URL", "\"https://sit.coffee-learning.invalid/api/\"")
+            buildConfigField("boolean", "USE_MOCK_API", "true")
+        }
+        create("production") {
+            resValue("string", "app_name", "Coffee")
+            buildConfigField("String", "BASE_URL", "\"https://coffee-learning.invalid/api/\"")
+            buildConfigField("boolean", "USE_MOCK_API", "false")
+        }
+    }
+
+    buildFeatures {
+        viewBinding = true
+        buildConfig = true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+}
+
+dependencies {
+    implementation Libraries.kotlin
+    implementation Libraries.ktxCore
+    implementation SupportLibraries.appcompat
+    implementation SupportLibraries.constraintLayout
+    implementation SupportLibraries.design
+
+    //Koin
+    implementation Libraries.koinAndroid
+    implementation Libraries.koinScope
+    implementation Libraries.koinViewModel
+
+    //Network
+    implementation Libraries.retrofit
+    implementation Libraries.retrofitGson
+    implementation Libraries.okhttp
+    implementation Libraries.okhttpLogging
+
+    implementation project(Modules.core)
+    implementation project(Modules.networks)
+    implementation project(Modules.apilayer)
+    implementation project(Modules.coffee)
+}

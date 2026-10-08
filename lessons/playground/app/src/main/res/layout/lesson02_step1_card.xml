@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- บทที่ 02 ขั้นที่ 1 — การ์ดเมนู -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF8F0"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/cardMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/menu_latte_name"
+            android:textColor="#4B3425"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/menu_latte_description"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,11 @@
+{
+  "Form": [
+    {
+      "FormHead": { "FormID": "COFFEE0101" },
+      "FormData": {
+        "RetMsgCode": "COFFEE0099",
+        "RetMessage": "ระบบแนะนำเมนูไม่พร้อมใช้งานชั่วคราว กรุณาลองใหม่อีกครั้ง"
+      }
+    }
+  ]
+}

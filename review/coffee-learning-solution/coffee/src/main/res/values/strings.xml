@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="coffee_title">ร้านกาแฟ</string>
+    <string name="coffee_greeting">สวัสดี วันนี้รับอะไรดี</string>
+    <string name="coffee_recommend_button">แนะนำเมนูให้หน่อย</string>
+    <string name="coffee_result">%1$s · %2$d บาท</string>
+    <string name="coffee_menu_header">เมนูทั้งหมด</string>
+    <string name="coffee_price">%1$d บาท</string>
+    <string name="coffee_dessert_button">แนะนำขนมด้วย</string>
+    <string name="coffee_detail_title">รายละเอียดเมนู</string>
+    <string name="coffee_detail_note">แตะปุ่มย้อนกลับเพื่อกลับไปหน้าร้าน</string>
+</resources>

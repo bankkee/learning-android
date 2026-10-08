@@ -1,0 +1,6 @@
+// ไฟล์ Gradle ระดับโปรเจกต์: ประกาศ plugin และเวอร์ชันที่ทุก module ใช้ร่วมกัน
+// เวอร์ชันตรงกับ workshop (ดู agent.md หัวข้อ Build)
+plugins {
+    id 'com.android.application' version '8.6.0' apply false
+    id 'org.jetbrains.kotlin.android' version '1.9.22' apply false
+}

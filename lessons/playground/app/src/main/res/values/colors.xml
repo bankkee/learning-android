@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ชื่อเดียวกับที่ workshop ใช้ -->
+    <color name="appBrown">#6F4E37</color>
+    <color name="appBrownDark">#4B3425</color>
+    <color name="appCream">#FFF8F0</color>
+    <color name="appGrey">#6B6B6B</color>
+    <color name="appWhite">#FFFFFF</color>
+</resources>

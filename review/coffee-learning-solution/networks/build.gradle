@@ -1,0 +1,30 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+}
+
+android {
+    compileSdkVersion App.compileSdk
+    namespace "com.learning.networks"
+
+    defaultConfig {
+        minSdkVersion App.minSdk
+        targetSdkVersion App.targetSdk
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+}
+
+dependencies {
+    implementation Libraries.kotlin
+
+    api Libraries.kotlinxCoroutines
+    api Libraries.retrofit
+    api Libraries.gson
+}

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- บทที่ 02 ขั้นที่ 8 -->
+
+    <!-- ตัวอย่างที่ทำไว้แล้ว: ใช้ใน lesson02_header.xml -->
+    <style name="MenuTitle">
+        <item name="android:textColor">@color/appBrownDark</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="ShopInfoLabel">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingTop">@dimen/default_16</item>
+        <item name="android:textColor">@color/appBrown</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+</resources>

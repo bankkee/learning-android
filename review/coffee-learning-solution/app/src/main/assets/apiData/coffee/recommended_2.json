@@ -1,0 +1,12 @@
+{
+  "Form": [
+    {
+      "FormHead": { "FormID": "COFFEE0101" },
+      "FormData": {
+        "Name": "มอคค่า",
+        "Price": 75,
+        "Description": "กาแฟผสมช็อกโกแลต"
+      }
+    }
+  ]
+}

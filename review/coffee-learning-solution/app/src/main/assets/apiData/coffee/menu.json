@@ -1,0 +1,17 @@
+{
+  "Form": [
+    {
+      "FormHead": { "FormID": "COFFEE0201" },
+      "FormData": {
+        "Items": [
+          { "Name": "เอสเพรสโซ่", "Price": 55 },
+          { "Name": "อเมริกาโน่", "Price": 60 },
+          { "Name": "ลาเต้", "Price": 65 },
+          { "Name": "คาปูชิโน่", "Price": 65 },
+          { "Name": "มอคค่า", "Price": 75 },
+          { "Name": "มัทฉะลาเต้", "Price": 80 }
+        ]
+      }
+    }
+  ]
+}

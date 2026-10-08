@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/tvShopName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/shop_name"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvBranch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tvDiscountRule"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/shop_discount_rule" />
+
+    <TextView
+        android:id="@+id/tvOrderCount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/tvTotal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/btnOrder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/shop_order" />
+
+    <Button
+        android:id="@+id/btnPromotion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/shop_promotion" />
+
+    <TextView
+        android:id="@+id/tvPromotion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp" />
+
+    <TextView
+        android:id="@+id/tvVersion"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="bottom|center_horizontal" />
+
+</LinearLayout>

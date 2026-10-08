@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- บทที่ 02 ขั้นที่ 6 และ 9 — ฟอร์มสั่งกาแฟ -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/ivHeader"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_gravity="center_horizontal"
+            android:contentDescription="@string/order_header_description"
+            android:src="@drawable/ic_coffee" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilName"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="@string/order_name_hint">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilPhone"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="@string/order_phone_hint">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="phone" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/tvSizeTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/order_size_title"
+            android:textSize="16sp" />
+
+        <RadioGroup
+            android:id="@+id/rgSize"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checkedButton="@id/rbSizeM"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rbSizeS"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:text="@string/order_size_s" />
+
+            <RadioButton
+                android:id="@+id/rbSizeM"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:text="@string/order_size_m" />
+
+            <RadioButton
+                android:id="@+id/rbSizeL"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/order_size_l" />
+
+        </RadioGroup>
+
+        <CheckBox
+            android:id="@+id/cbExtraShot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/order_extra_shot" />
+
+        <TextView
+            android:id="@+id/tvCupsTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/order_cups_title"
+            android:textSize="16sp" />
+
+        <com.learning.playground.lesson02.QuantityStepperView
+            android:id="@+id/stepperCups"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:maxQuantity="5" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/switchDelivery"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/order_delivery"
+            android:textSize="16sp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilAddress"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/order_address_hint"
+            android:visibility="gone">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPostalAddress" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ProgressBar
+            android:id="@+id/progressOrder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/btnSubmit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/order_submit" />
+
+        <TextView
+            android:id="@+id/tvSummary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textColor="#4B3425"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+</ScrollView>

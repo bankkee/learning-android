@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- บทที่ 02: สารบัญของบท -->
+    <string name="lesson02_title">บทที่ 02 — Layout และ View</string>
+    <string name="lesson02_step1">ขั้นที่ 1 — การ์ดเมนู</string>
+    <string name="lesson02_step2_example">ขั้นที่ 2 — ตัวอย่าง weight</string>
+    <string name="lesson02_step2">ขั้นที่ 2 — แถวเมนู (LinearLayout)</string>
+    <string name="lesson02_step3">ขั้นที่ 3 — หน้ารายละเอียด</string>
+    <string name="lesson02_step4">ขั้นที่ 4 — แถวเมนู (ConstraintLayout)</string>
+    <string name="lesson02_step5">ขั้นที่ 5 — แผงสั่งกาแฟ</string>
+    <string name="lesson02_step6">ขั้นที่ 6 และ 9 — ฟอร์มสั่งกาแฟ</string>
+    <string name="lesson02_step7">ขั้นที่ 7 — รายการเมนู</string>
+    <string name="lesson02_step8">ขั้นที่ 8 — ข้อมูลร้าน</string>
+
+    <!-- เมนูตัวอย่าง ใช้ในขั้นที่ 1–4 -->
+    <string name="menu_latte_name">ลาเต้</string>
+    <string name="menu_latte_description">เอสเปรสโซกับนมร้อนและฟองนมบาง ๆ</string>
+    <string name="menu_latte_price">65 บาท</string>
+    <string name="menu_item_price">%1$d บาท</string>
+
+    <!-- ขั้นที่ 2: ตัวอย่าง weight -->
+    <string name="weight_box_a">A</string>
+    <string name="weight_box_b">B</string>
+    <string name="weight_box_c">C</string>
+
+    <!-- ขั้นที่ 3: หน้ารายละเอียด -->
+    <string name="detail_badge">ขายดี</string>
+    <string name="detail_order">สั่งแก้วนี้</string>
+    <string name="detail_long_description">ลาเต้คือกาแฟที่ชงจากเอสเปรสโซหนึ่งหรือสองช็อต เติมด้วยนมร้อนที่สตีมจนเนียน แล้วปิดด้านบนด้วยฟองนมบาง ๆ รสชาตินุ่มและไม่ขมจัด จึงเป็นเมนูที่คนเริ่มดื่มกาแฟมักเลือกเป็นแก้วแรก\n\nเมล็ดที่ร้านใช้เป็นอาราบิกาคั่วกลางจากดอยทางภาคเหนือ คั่วใหม่ทุกสัปดาห์ และบดก่อนชงทุกแก้ว เพื่อให้กลิ่นยังอยู่ครบเมื่อถึงมือลูกค้า\n\nนมที่ใช้เป็นนมสดพาสเจอไรซ์จากฟาร์มในจังหวัดใกล้เคียง ส่งเข้าร้านทุกเช้า ลูกค้าเปลี่ยนเป็นนมโอ๊ตหรือนมอัลมอนด์ได้โดยไม่เสียค่าใช้จ่ายเพิ่ม\n\nบาริสต้าของร้านสตีมนมที่อุณหภูมิประมาณหกสิบห้าองศา ซึ่งเป็นช่วงที่ความหวานตามธรรมชาติของนมออกมามากที่สุด ถ้าร้อนกว่านี้นมจะเริ่มมีกลิ่นไหม้และเสียความหวาน\n\nลาเต้ร้อนเสิร์ฟในแก้วเซรามิกที่อุ่นไว้ก่อน เพื่อให้กาแฟไม่เย็นเร็วเกินไป ส่วนลาเต้เย็นเสิร์ฟในแก้วใสพร้อมน้ำแข็งก้อนใหญ่ที่ละลายช้า รสชาติจึงไม่จางระหว่างดื่ม\n\nถ้าชอบรสเข้มขึ้น สั่งเพิ่มช็อตได้ และถ้าชอบหวาน ร้านมีไซรัปวานิลลา คาราเมล และเฮเซลนัตให้เลือก บอกพนักงานได้ตอนสั่ง\n\nเมนูนี้ขายดีที่สุดของร้านต่อเนื่องมาตั้งแต่วันเปิด โดยเฉพาะช่วงเช้าก่อนเก้าโมง ถ้าไม่อยากรอคิว สั่งล่วงหน้าผ่านแอปแล้วมารับที่เคาน์เตอร์ได้เลย</string>
+
+    <!-- ขั้นที่ 5: แผงสั่งกาแฟ -->
+    <string name="panel_size_s">S</string>
+    <string name="panel_size_m">M</string>
+    <string name="panel_size_l">L</string>
+    <string name="panel_hot">ร้อน</string>
+    <string name="panel_cold">เย็น</string>
+    <string name="panel_label_name">ชื่อ</string>
+    <string name="panel_label_phone">เบอร์โทรศัพท์</string>
+    <string name="panel_label_address">ที่อยู่</string>
+    <string name="panel_value_name">สมชาย ใจดี</string>
+    <string name="panel_value_phone">081-234-5678</string>
+    <string name="panel_value_address">99 ถนนกาแฟ</string>
+
+    <!-- ขั้นที่ 6 และ 9: ฟอร์มสั่งกาแฟ -->
+    <string name="order_header_description">รูปแก้วกาแฟ</string>
+    <string name="order_name_hint">ชื่อลูกค้า</string>
+    <string name="order_phone_hint">เบอร์โทรศัพท์</string>
+    <string name="order_size_title">ขนาดแก้ว</string>
+    <string name="order_size_s">S</string>
+    <string name="order_size_m">M</string>
+    <string name="order_size_l">L</string>
+    <string name="order_extra_shot">เพิ่มช็อต</string>
+    <string name="order_cups_title">จำนวนแก้ว</string>
+    <string name="order_delivery">จัดส่งถึงบ้าน</string>
+    <string name="order_address_hint">ที่อยู่จัดส่ง</string>
+    <string name="order_submit">สั่งเลย</string>
+    <string name="stepper_minus">−</string>
+    <string name="stepper_plus">+</string>
+
+    <!-- ขั้นที่ 8: ข้อมูลร้าน -->
+    <string name="reuse_header_title">ร้านกาแฟ Playground</string>
+    <string name="reuse_open">เปิดทุกวัน 07:00–18:00</string>
+    <string name="reuse_phone">โทร 02-123-4567</string>
+    <string name="reuse_address">99 ถนนกาแฟ กรุงเทพฯ</string>
+</resources>

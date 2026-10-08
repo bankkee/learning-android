@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- attribute ที่ QuantityStepperView รับจาก XML ผ่าน app: -->
+    <declare-styleable name="QuantityStepperView">
+        <attr name="minQuantity" format="integer" />
+        <attr name="maxQuantity" format="integer" />
+    </declare-styleable>
+</resources>

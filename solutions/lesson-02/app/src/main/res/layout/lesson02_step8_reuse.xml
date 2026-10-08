@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- บทที่ 02 ขั้นที่ 8 — หน้าข้อมูลร้าน -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/appCream"
+    android:orientation="vertical"
+    android:padding="@dimen/default_16">
+
+    <include layout="@layout/lesson02_header" />
+
+    <TextView
+        android:id="@+id/tvLabelOpen"
+        style="@style/ShopInfoLabel"
+        android:text="@string/reuse_open" />
+
+    <TextView
+        android:id="@+id/tvLabelPhone"
+        style="@style/ShopInfoLabel"
+        android:text="@string/reuse_phone" />
+
+    <TextView
+        android:id="@+id/tvLabelAddress"
+        style="@style/ShopInfoLabel"
+        android:text="@string/reuse_address" />
+
+</LinearLayout>

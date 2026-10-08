@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="common_ok">ตกลง</string>
+    <string name="common_error">เกิดข้อผิดพลาด กรุณาลองใหม่</string>
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/appBrown</item>
+        <item name="colorPrimaryDark">@color/appBrownDark</item>
+        <item name="colorPrimaryVariant">@color/appBrownDark</item>
+        <item name="colorSecondary">@color/appBrown</item>
+        <item name="colorAccent">@color/appBrown</item>
+        <item name="android:windowBackground">@color/appCream</item>
+        <!-- พื้นหลังสีอ่อน จึงให้ icon ของ status bar เป็นสีเข้ม -->
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+</resources>

@@ -1,0 +1,38 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+}
+
+android {
+    compileSdkVersion App.compileSdk
+    namespace "com.learning.core"
+
+    defaultConfig {
+        minSdkVersion App.minSdk
+        targetSdkVersion App.targetSdk
+    }
+
+    buildFeatures {
+        viewBinding = true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+}
+
+dependencies {
+    implementation Libraries.kotlin
+    implementation Libraries.ktxCore
+    implementation SupportLibraries.appcompat
+    implementation SupportLibraries.constraintLayout
+    implementation SupportLibraries.design
+    implementation Libraries.lifecycleLiveData
+    implementation Libraries.lifecycleViewModel
+    implementation Libraries.lifecycleRuntime
+
+    api project(Modules.networks)
+}

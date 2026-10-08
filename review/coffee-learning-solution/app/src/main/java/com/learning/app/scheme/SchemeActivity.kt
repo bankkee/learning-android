@@ -1,0 +1,46 @@
+package com.learning.app.scheme
+
+import android.net.Uri
+import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import com.learning.core.router.CoffeeRouter
+import org.koin.android.ext.android.inject
+
+// ผู้เรียนสร้างไฟล์นี้เอง: Session 4 · ภารกิจ 3
+// คู่มือให้โครงของ class และ onCreate มา ผู้เรียนเขียนเนื้อหาของ handlerDeepLink() และ companion object
+/**
+ * ประตูหน้าของแอปสำหรับลิงก์จากข้างนอก ไม่มีหน้าตาของตัวเอง:
+ * อ่านลิงก์ → ตัดสินใจว่าจะไปหน้าไหน → ส่งต่อ → ปิดตัวเอง
+ *
+ * coffeelearning://open.app/detail?name=Mocha  → หน้ารายละเอียดของ Mocha
+ * coffeelearning://open.app                    → หน้าร้านกาแฟ
+ */
+class SchemeActivity : AppCompatActivity() {
+
+    private val coffeeRouter: CoffeeRouter by inject()
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        handlerDeepLink()
+    }
+
+    // >>> ผู้เรียนเขียน: Session 4 · ภารกิจ 3
+    private fun handlerDeepLink() {
+        val data: Uri? = intent?.data
+        data ?: return finish()
+
+        val coffeeName = data.getQueryParameter(QUERY_NAME)
+        if (data.path == PATH_DETAIL && !coffeeName.isNullOrBlank()) {
+            coffeeRouter.onCoffeeDetail(this, coffeeName)
+        } else {
+            coffeeRouter.onCoffeeMenu(this)
+        }
+        finish()
+    }
+
+    companion object {
+        const val PATH_DETAIL = "/detail"
+        const val QUERY_NAME = "name"
+    }
+    // <<< จบส่วนที่ผู้เรียนเขียน
+}

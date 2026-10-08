@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Playground</string>
+
+    <!-- หน้าแรก -->
+    <string name="home_title">Playground</string>
+    <string name="home_lesson01">บทที่ 01 — หน้าร้านกาแฟ</string>
+    <string name="home_lesson02">บทที่ 02 — Layout และ View</string>
+
+    <!-- บทที่ 01: หน้าร้านกาแฟ -->
+    <string name="shop_name">ร้านกาแฟ Playground</string>
+    <string name="shop_discount_rule">สั่งครบ 3 แก้ว ลดแก้วละ 10 บาท</string>
+    <string name="shop_order">สั่งกาแฟ</string>
+    <string name="shop_order_count">สั่งไปแล้ว %1$d แก้ว</string>
+    <string name="shop_total_price">รวม %1$d บาท</string>
+    <string name="shop_promotion">ดูโปรโมชัน</string>
+    <string name="shop_version">เวอร์ชัน %1$s</string>
+</resources>
